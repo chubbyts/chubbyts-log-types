@@ -26,6 +26,8 @@ Log (logger) types, [PSR-3][2] inspired.
 
 ## Installation
 
+Through [NPM](https://www.npmjs.com) as [@chubbyjs/chubbyjs-log-types][1].
+
 ```ts
 npm i @chubbyts/chubbyts-log-types
 ```
