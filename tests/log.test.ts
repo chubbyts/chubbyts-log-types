@@ -35,58 +35,58 @@ describe('log', () => {
       expect(log).toHaveBeenCalledTimes(8);
 
       expect(logEntries).toMatchInlineSnapshot(`
-      Array [
-        Object {
-          "context": Object {
+      [
+        {
+          "context": {
             "key": "value",
           },
           "level": "emergency",
           "message": "emergency",
         },
-        Object {
-          "context": Object {
+        {
+          "context": {
             "key": "value",
           },
           "level": "alert",
           "message": "alert",
         },
-        Object {
-          "context": Object {
+        {
+          "context": {
             "key": "value",
           },
           "level": "critical",
           "message": "critical",
         },
-        Object {
-          "context": Object {
+        {
+          "context": {
             "key": "value",
           },
           "level": "error",
           "message": "error",
         },
-        Object {
-          "context": Object {
+        {
+          "context": {
             "key": "value",
           },
           "level": "warning",
           "message": "warning",
         },
-        Object {
-          "context": Object {
+        {
+          "context": {
             "key": "value",
           },
           "level": "notice",
           "message": "notice",
         },
-        Object {
-          "context": Object {
+        {
+          "context": {
             "key": "value",
           },
           "level": "info",
           "message": "info",
         },
-        Object {
-          "context": Object {
+        {
+          "context": {
             "key": "value",
           },
           "level": "debug",
