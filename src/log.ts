@@ -9,8 +9,10 @@ export enum LogLevel {
   DEBUG = 'debug',
 }
 
-export type NamedLogFn = (message: string, context: Record<string, unknown>) => void;
-export type LogFn = (level: LogLevel, message: string, context: Record<string, unknown>) => void;
+export type Context = Record<string, unknown>;
+
+export type NamedLogFn = (message: string, context: Context) => void;
+export type LogFn = (level: LogLevel, message: string, context: Context) => void;
 
 export type Logger = {
   emergency: NamedLogFn;
@@ -25,35 +27,35 @@ export type Logger = {
 };
 
 export const createLogger = (log: LogFn = () => {}): Logger => {
-  const emergency = (message: string, context: Record<string, unknown>) => {
+  const emergency = (message: string, context: Context) => {
     log(LogLevel.EMERGENCY, message, context);
   };
 
-  const alert = (message: string, context: Record<string, unknown>) => {
+  const alert = (message: string, context: Context) => {
     log(LogLevel.ALERT, message, context);
   };
 
-  const critical = (message: string, context: Record<string, unknown>) => {
+  const critical = (message: string, context: Context) => {
     log(LogLevel.CRITICAL, message, context);
   };
 
-  const error = (message: string, context: Record<string, unknown>) => {
+  const error = (message: string, context: Context) => {
     log(LogLevel.ERROR, message, context);
   };
 
-  const warning = (message: string, context: Record<string, unknown>) => {
+  const warning = (message: string, context: Context) => {
     log(LogLevel.WARNING, message, context);
   };
 
-  const notice = (message: string, context: Record<string, unknown>) => {
+  const notice = (message: string, context: Context) => {
     log(LogLevel.NOTICE, message, context);
   };
 
-  const info = (message: string, context: Record<string, unknown>) => {
+  const info = (message: string, context: Context) => {
     log(LogLevel.INFO, message, context);
   };
 
-  const debug = (message: string, context: Record<string, unknown>) => {
+  const debug = (message: string, context: Context) => {
     log(LogLevel.DEBUG, message, context);
   };
 

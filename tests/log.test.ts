@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals';
-import { createLogger, LogFn, LogLevel } from '../src/log';
+import { Context, createLogger, LogFn, LogLevel } from '../src/log';
 
 describe('log', () => {
   describe('createLogger', () => {
@@ -16,9 +16,9 @@ describe('log', () => {
     });
 
     test('with log function', () => {
-      const logEntries: Array<{ level: LogLevel; message: string; context: Record<string, unknown> }> = [];
+      const logEntries: Array<{ level: LogLevel; message: string; context: Context }> = [];
 
-      const log: LogFn = jest.fn((level: LogLevel, message: string, context: Record<string, unknown>) => {
+      const log: LogFn = jest.fn((level: LogLevel, message: string, context: Context) => {
         logEntries.push({ level, message, context });
       });
 
