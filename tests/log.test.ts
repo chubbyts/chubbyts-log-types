@@ -1,5 +1,7 @@
 import { describe, expect, test } from '@jest/globals';
-import { Context, createLogger, LogFn, LogLevel } from '../src/log';
+import { useFunctionMock } from '@chubbyts/chubbyts-function-mock/dist/function-mock';
+import type { LogFn } from '../src/log';
+import { LogLevel, createLogger } from '../src/log';
 
 describe('log', () => {
   describe('createLogger', () => {
@@ -16,11 +18,16 @@ describe('log', () => {
     });
 
     test('with log function', () => {
-      const logEntries: Array<{ level: LogLevel; message: string; context: Context }> = [];
-
-      const log: LogFn = jest.fn((level: LogLevel, message: string, context: Context) => {
-        logEntries.push({ level, message, context });
-      });
+      const [log, logMocks] = useFunctionMock<LogFn>([
+        { parameters: [LogLevel.EMERGENCY, 'emergency', { key: 'value' }], return: undefined },
+        { parameters: [LogLevel.ALERT, 'alert', { key: 'value' }], return: undefined },
+        { parameters: [LogLevel.CRITICAL, 'critical', { key: 'value' }], return: undefined },
+        { parameters: [LogLevel.ERROR, 'error', { key: 'value' }], return: undefined },
+        { parameters: [LogLevel.WARNING, 'warning', { key: 'value' }], return: undefined },
+        { parameters: [LogLevel.NOTICE, 'notice', { key: 'value' }], return: undefined },
+        { parameters: [LogLevel.INFO, 'info', { key: 'value' }], return: undefined },
+        { parameters: [LogLevel.DEBUG, 'debug', { key: 'value' }], return: undefined },
+      ]);
 
       const logger = createLogger(log);
       logger.emergency('emergency', { key: 'value' });
@@ -32,68 +39,7 @@ describe('log', () => {
       logger.info('info', { key: 'value' });
       logger.debug('debug', { key: 'value' });
 
-      expect(log).toHaveBeenCalledTimes(8);
-
-      expect(logEntries).toMatchInlineSnapshot(`
-      [
-        {
-          "context": {
-            "key": "value",
-          },
-          "level": "emergency",
-          "message": "emergency",
-        },
-        {
-          "context": {
-            "key": "value",
-          },
-          "level": "alert",
-          "message": "alert",
-        },
-        {
-          "context": {
-            "key": "value",
-          },
-          "level": "critical",
-          "message": "critical",
-        },
-        {
-          "context": {
-            "key": "value",
-          },
-          "level": "error",
-          "message": "error",
-        },
-        {
-          "context": {
-            "key": "value",
-          },
-          "level": "warning",
-          "message": "warning",
-        },
-        {
-          "context": {
-            "key": "value",
-          },
-          "level": "notice",
-          "message": "notice",
-        },
-        {
-          "context": {
-            "key": "value",
-          },
-          "level": "info",
-          "message": "info",
-        },
-        {
-          "context": {
-            "key": "value",
-          },
-          "level": "debug",
-          "message": "debug",
-        },
-      ]
-    `);
+      expect(logMocks.length).toBe(0);
     });
   });
 });
