@@ -29,7 +29,7 @@ Log (logger) types, [PSR-3][2] inspired.
 Through [NPM](https://www.npmjs.com) as [@chubbyts/chubbyts-log-types][1].
 
 ```ts
-npm i @chubbyts/chubbyts-log-types@^1.3.0
+npm i @chubbyts/chubbyts-log-types@^1.3.1
 ```
 
 ## Copyright
