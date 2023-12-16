@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/chubbyts/chubbyts-log-types/workflows/CI/badge.svg?branch=master)](https://github.com/chubbyts/chubbyts-log-types/actions?query=workflow%3ACI)
 [![Coverage Status](https://coveralls.io/repos/github/chubbyts/chubbyts-log-types/badge.svg?branch=master)](https://coveralls.io/github/chubbyts/chubbyts-log-types?branch=master)
-[![Infection MSI](https://badge.stryker-mutator.io/github.com/chubbyts/chubbyts-log-types/master)](https://dashboard.stryker-mutator.io/reports/github.com/chubbyts/chubbyts-log-types/master)
+[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fchubbyts%2Fchubbyts-log-types%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/chubbyts/chubbyts-log-types/master)
 [![npm-version](https://img.shields.io/npm/v/@chubbyts/chubbyts-log-types.svg)](https://www.npmjs.com/package/@chubbyts/chubbyts-log-types)
 
 [![bugs](https://sonarcloud.io/api/project_badges/measure?project=chubbyts_chubbyts-log-types&metric=bugs)](https://sonarcloud.io/dashboard?id=chubbyts_chubbyts-log-types)
