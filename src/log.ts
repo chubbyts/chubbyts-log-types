@@ -26,7 +26,6 @@ export type Logger = {
   log: LogFn;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 export const createLogger = (log: LogFn = () => {}): Logger => {
   const emergency = (message: string, context: Context) => {
     log(LogLevel.EMERGENCY, message, context);

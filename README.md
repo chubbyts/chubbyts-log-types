@@ -22,19 +22,19 @@ Log (logger) types, [PSR-3][2] inspired.
 
 ## Requirements
 
- * node: 16
+ * node: 18
 
 ## Installation
 
 Through [NPM](https://www.npmjs.com) as [@chubbyts/chubbyts-log-types][1].
 
 ```ts
-npm i @chubbyts/chubbyts-log-types@^1.3.2
+npm i @chubbyts/chubbyts-log-types@^1.4.1
 ```
 
 ## Copyright
 
-2024 Dominik Zogg
+2025 Dominik Zogg
 
 [1]: https://www.npmjs.com/package/@chubbyts/chubbyts-log-types
 [2]: https://www.php-fig.org/psr/PSR-3
