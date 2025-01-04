@@ -1,7 +1,7 @@
 {
   "name": "@chubbyts/chubbyts-log-types",
   "type": "module",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Log (logger) types, PSR-3 inspired.",
   "keywords": [
     "chubbyts",
@@ -44,7 +44,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@chubbyts/chubbyts-eslint": "^3.0.2",
+    "@chubbyts/chubbyts-eslint": "^3.0.3",
     "@chubbyts/chubbyts-function-mock": "^1.5.1",
     "@chubbyts/chubbyts-packaging": "^3.0.2",
     "@stryker-mutator/core": "^8.7.1",
