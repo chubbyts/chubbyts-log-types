@@ -1,13 +1,4 @@
-export enum LogLevel {
-  EMERGENCY = 'emergency',
-  ALERT = 'alert',
-  CRITICAL = 'critical',
-  ERROR = 'error',
-  WARNING = 'warning',
-  NOTICE = 'notice',
-  INFO = 'info',
-  DEBUG = 'debug',
-}
+export type LogLevel = 'emergency' | 'alert' | 'critical' | 'error' | 'warning' | 'notice' | 'info' | 'debug';
 
 export type Context = Record<string, unknown>;
 
@@ -28,35 +19,35 @@ export type Logger = {
 
 export const createLogger = (log: LogFn = () => {}): Logger => {
   const emergency = (message: string, context: Context) => {
-    log(LogLevel.EMERGENCY, message, context);
+    log('emergency', message, context);
   };
 
   const alert = (message: string, context: Context) => {
-    log(LogLevel.ALERT, message, context);
+    log('alert', message, context);
   };
 
   const critical = (message: string, context: Context) => {
-    log(LogLevel.CRITICAL, message, context);
+    log('critical', message, context);
   };
 
   const error = (message: string, context: Context) => {
-    log(LogLevel.ERROR, message, context);
+    log('error', message, context);
   };
 
   const warning = (message: string, context: Context) => {
-    log(LogLevel.WARNING, message, context);
+    log('warning', message, context);
   };
 
   const notice = (message: string, context: Context) => {
-    log(LogLevel.NOTICE, message, context);
+    log('notice', message, context);
   };
 
   const info = (message: string, context: Context) => {
-    log(LogLevel.INFO, message, context);
+    log('info', message, context);
   };
 
   const debug = (message: string, context: Context) => {
-    log(LogLevel.DEBUG, message, context);
+    log('debug', message, context);
   };
 
   return {

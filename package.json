@@ -1,7 +1,7 @@
 {
   "name": "@chubbyts/chubbyts-log-types",
   "type": "module",
-  "version": "1.4.3",
+  "version": "2.0.1",
   "description": "Log (logger) types, PSR-3 inspired.",
   "keywords": [
     "chubbyts",
