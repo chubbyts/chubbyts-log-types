@@ -8,14 +8,16 @@ describe('log', () => {
     test('without log function', () => {
       const logger = createLogger();
 
-      logger.emergency('message', { key: 'value' });
-      logger.alert('message', { key: 'value' });
-      logger.critical('message', { key: 'value' });
-      logger.error('message', { key: 'value' });
-      logger.warning('message', { key: 'value' });
-      logger.notice('message', { key: 'value' });
-      logger.info('message', { key: 'value' });
-      logger.debug('message', { key: 'value' });
+      expect(() => {
+        logger.emergency('message', { key: 'value' });
+        logger.alert('message', { key: 'value' });
+        logger.critical('message', { key: 'value' });
+        logger.error('message', { key: 'value' });
+        logger.warning('message', { key: 'value' });
+        logger.notice('message', { key: 'value' });
+        logger.info('message', { key: 'value' });
+        logger.debug('message', { key: 'value' });
+      }).not.toThrow();
     });
 
     test('with log function', () => {
@@ -41,7 +43,7 @@ describe('log', () => {
       logger.info('message', { key: 'value' });
       logger.debug('message', { key: 'value' });
 
-      expect(logMocks.length).toBe(0);
+      expect(logMocks).toHaveLength(0);
     });
   });
 });
