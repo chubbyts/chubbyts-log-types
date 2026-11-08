@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { useFunctionMock } from '@chubbyts/chubbyts-function-mock/dist/function-mock';
+import { useFunctionMock } from '@chubbyts/chubbyts-function-mock/function-mock';
 import type { LogFn } from '../src/log.js';
 import { createLogger } from '../src/log.js';
 
