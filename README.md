@@ -33,7 +33,7 @@ without depending on a concrete logging implementation.
 Through [NPM](https://www.npmjs.com) as [@chubbyts/chubbyts-log-types][1].
 
 ```sh
-npm i @chubbyts/chubbyts-log-types@^3.4.1
+npm i @chubbyts/chubbyts-log-types@^3.4.2
 ```
 
 ## Usage
